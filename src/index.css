@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@layer theme;
+
+@theme {
+  --color-primary-color: oklch(59% 0.1094 177.01);
+  --color-secondary-color: oklch(95.09% 0.0066 208.78);
+}
+
+.logo {
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: teal;
+}
+
