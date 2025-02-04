@@ -13,6 +13,7 @@ import {
   WorkspacePremium,
 } from "@mui/icons-material";
 import { useState } from "react";
+import SimilarProducts from "./SimilarProducts";
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   return (
@@ -116,6 +117,12 @@ function ProductDetails() {
             </p>
           </div>
         </section>
+      </div>
+      <div className="mt-20">
+        <h1 className="text-lg font-bold">Similar Products</h1>
+        <div className="pt-5">
+          <SimilarProducts />
+        </div>
       </div>
     </div>
   );
