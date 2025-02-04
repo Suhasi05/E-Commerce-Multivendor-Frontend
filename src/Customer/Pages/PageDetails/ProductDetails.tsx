@@ -14,6 +14,7 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import SimilarProducts from "./SimilarProducts";
+import ReviewCard from "../Review/ReviewCard";
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   return (
@@ -115,6 +116,10 @@ function ProductDetails() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Consequatur odit obcaecati placeat eaque, porro eius!
             </p>
+          </div>
+          <div className="mt-12 space-y-5">
+            <ReviewCard />
+            <Divider />
           </div>
         </section>
       </div>
