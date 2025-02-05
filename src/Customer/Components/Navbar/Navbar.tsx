@@ -13,12 +13,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { AddShoppingCart, Storefront } from "@mui/icons-material";
 import CategorySheet from "./CategorySheet";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
   const [selectedCategory, setSelectedCategory] = useState("men");
   const [showCategorySheet, setShowCategorySheet] = useState(false);
+  const navigate = useNavigate();
 
   const categories = [
     { name: "Men", categoryId: "men" },
@@ -38,7 +40,7 @@ function Navbar() {
                   <MenuIcon />
                 </IconButton>
               )}
-              <h1 className="logo cursor-pointer text-lg md:text-2xl text-primary-color">
+              <h1 onClick={() => navigate("/")} className="logo cursor-pointer text-lg md:text-2xl text-primary-color">
                 E-Commerce
               </h1>
             </div>
@@ -62,7 +64,7 @@ function Navbar() {
               <SearchIcon />
             </IconButton>
             {true ? (
-              <Button className="flex items-center gap-2">
+              <Button onClick={() => navigate("/account/orders")} className="flex items-center gap-2">
                 <Avatar sx={{ width: 29, height: 29 }} src="" />{" "}
                 <h1 className="font-semibold hidden lg:block">Suhasi</h1>{" "}
               </Button>
@@ -72,7 +74,7 @@ function Navbar() {
             <IconButton>
               <FavoriteBorderIcon sx={{ fontSize: 29 }} />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => navigate("/cart")}>
               <AddShoppingCart
                 className="text-gray-700"
                 sx={{ fontSize: 29 }}

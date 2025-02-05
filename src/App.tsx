@@ -8,6 +8,7 @@ import Review from "./Customer/Pages/Review/Review";
 import Cart from "./Customer/Pages/Cart/Cart";
 import Checkout from "./Customer/Pages/Checkout/Checkout";
 import Account from "./Customer/Pages/Account/Account";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -20,7 +21,19 @@ function App() {
         {/* <Review /> */}
         {/* <Cart /> */}
         {/* <Checkout /> */}
-        <Account />
+        {/* <Account /> */}
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:category" element={<Product />} />
+          <Route path="/reviews/:productId" element={<Review />} />
+          <Route path="/product-details/:categoryId/:name/:productId" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/account/*" element={<Account />} />
+
+
+        </Routes>
       </ThemeProvider>
     </>
   );
