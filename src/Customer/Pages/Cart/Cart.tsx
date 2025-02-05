@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 import { teal } from "@mui/material/colors";
 import { Button, IconButton, TextField } from "@mui/material";
 import { useState } from "react";
+import PricingCart from "./PricingCart";
 
 function Cart() {
   const [couponCode, setCouponCode] = useState("");
@@ -39,11 +40,22 @@ function Cart() {
             ) : (
               <div className="flex">
                 <div className="p-1 pl-5 pr-3 border rounded-md flex gap-2 items-center">
-                    <span className="">FLAT20 Applied</span>
-                    <IconButton size="small"> <Close className="text-red-600" /> </IconButton>
+                  <span className="">FLAT20 Applied</span>
+                  <IconButton size="small">
+                    {" "}
+                    <Close className="text-red-600" />{" "}
+                  </IconButton>
                 </div>
               </div>
             )}
+          </div>
+          <div className="border rounded-md">
+            <PricingCart />
+            <div className="p-5">
+              <Button fullWidth variant="contained" sx={{ py: "11px" }}>
+                Buy now
+              </Button>
+            </div>
           </div>
         </div>
       </div>
