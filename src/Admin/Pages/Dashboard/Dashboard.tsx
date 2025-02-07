@@ -1,3 +1,4 @@
+import AdminRoutes from "../../../Routes/AdminRoutes";
 import AdminDrawerList from "../../Components/AdminDrawerList";
 
 function AdminDashboard() {
@@ -6,11 +7,10 @@ function AdminDashboard() {
     <div>
       <div className="lg:flex lg:h-[90vh]">
         <section className="hidden lg:block h-full">
-          {/* <SellerDrawerList toggleDrawer={toggleDrawer} /> */}
           <AdminDrawerList toggleDrawer={toggleDrawer} />
         </section>
         <section className="p-10 w-full lg:w-[80%] overflow-y-auto">
-          {/* <SellerRoutes /> */}
+          <AdminRoutes />
         </section>
       </div>
     </div>

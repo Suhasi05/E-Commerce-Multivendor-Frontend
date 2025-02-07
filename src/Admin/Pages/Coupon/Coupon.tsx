@@ -1,9 +1,5 @@
 import {
-  FormControl,
-  InputLabel,
-  MenuItem,
   Paper,
-  Select,
   styled,
   Table,
   TableBody,
@@ -13,48 +9,8 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { useState } from "react";
 
-const accountStatuses = [
-  {
-    status: "PENDING_VERIFICATION",
-    title: "Pending Verification",
-    description: "",
-  },
-  {
-    status: "ACTIVE",
-    title: "Active",
-    description: "Account is active and in good status",
-  },
-  {
-    status: "SUSPENDED",
-    title: "Suspended",
-    description: "Accoint is temporarily suspended",
-  },
-  {
-    status: "DEACTIVATED",
-    title: "Deactivated",
-    description: "Account is deactivated",
-  },
-  {
-    status: "BANNED",
-    title: "Banned",
-    description: "Account is permanently unavailable",
-  },
-  {
-    status: "CLOSED",
-    title: "Closed",
-    description: "Account is permanently closed",
-  },
-];
-
-function SellerTable() {
-  const [accountStatus, setAccountStatus] = useState("ACTIVE");
-
-  const handleChange = (event: any) => {
-    setAccountStatus(event.target.value);
-  };
-
+function Coupon() {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -69,7 +25,6 @@ function SellerTable() {
     "&:nth-of-type(odd)": {
       backgroundColor: theme.palette.action.hover,
     },
-    // hide last border
     "&:last-child td, &:last-child th": {
       border: 0,
     },
@@ -95,34 +50,17 @@ function SellerTable() {
 
   return (
     <>
-      <div className="pb-5 w-60">
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Account Status</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={accountStatus}
-            label="Account Status"
-            onChange={handleChange}
-          >
-            {accountStatuses.map((item) => (
-              <MenuItem value={item.status}>{item.title}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Seller Name</StyledTableCell>
-              <StyledTableCell>Email</StyledTableCell>
-              <StyledTableCell align="right">Mobile</StyledTableCell>
-              <StyledTableCell align="right">GSTIN</StyledTableCell>
-              <StyledTableCell align="right">Bussiness Name</StyledTableCell>
-              <StyledTableCell align="right">Account Status</StyledTableCell>
-              <StyledTableCell align="right">Change Status</StyledTableCell>
+              <StyledTableCell>Coupon Code</StyledTableCell>
+              <StyledTableCell>Start Date</StyledTableCell>
+              <StyledTableCell align="right">End Date</StyledTableCell>
+              <StyledTableCell align="right">Min Order Value</StyledTableCell>
+              <StyledTableCell align="right">Discount %</StyledTableCell>
+              <StyledTableCell align="right">Status</StyledTableCell>
+              <StyledTableCell align="right">Delete</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -146,4 +84,4 @@ function SellerTable() {
   );
 }
 
-export default SellerTable;
+export default Coupon;
