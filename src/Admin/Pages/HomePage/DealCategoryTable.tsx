@@ -1,6 +1,6 @@
 import HomeCategoryTable from "./HomeCategoryTable"
 
-function ShopByCategoryTable() {
+function DealCategoryTable() {
   return (
     <div>
       <HomeCategoryTable />
@@ -8,4 +8,4 @@ function ShopByCategoryTable() {
   )
 }
 
-export default ShopByCategoryTable
+export default DealCategoryTable
